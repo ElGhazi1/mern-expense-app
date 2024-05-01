@@ -1,17 +1,11 @@
-const express  = require('express');
-const router = express.Router();
+require('dotenv').config();
 
-const  app = express();
+const app = require('./src/app');
 
-app.use(router);
+const PORT = process.env.PORT || 5000; 
 
-router.get('/' , (req , res)=>{
-    res.send({
-        message:'Hello World!'
-    });
 
-});
 
 app.listen( 3000, ()=> {
-        console.log('Server is ready');
+        console.log(`Server is ready for connection on port ${PORT}`);
 } );
